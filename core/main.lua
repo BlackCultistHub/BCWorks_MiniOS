@@ -13,7 +13,7 @@ end
 write("$ ")
 local inpModule = io.read()
 local hModule = fs.open(packageList.modulesDir..inpModule..".lua", "r")
-loadstring(hChat.readAll())()
+loadstring(hModule.readAll())()
 menu = true
 
 end end
