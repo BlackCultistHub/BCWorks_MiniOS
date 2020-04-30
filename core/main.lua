@@ -13,6 +13,7 @@ end
 write("$ ")
 local inpModule = io.read()
 local hModule = fs.open(packageList.modulesDir..inpModule..".lua", "r")
+print(packageList.modulesDir..inpModule..".lua")
 loadstring(hModule.readAll())()
 menu = true
 
