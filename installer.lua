@@ -92,7 +92,7 @@ for name, path in pairs(packageList.modulesCoreList) do
         end
         do return end
     end
-    local moduleCoreContent = http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/core" .. name)
+    local moduleCoreContent = http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/core/" .. name)
     hModule.write(moduleCoreContent.readAll())
     print("*   [OK] Module " .. name .. " installed.")
     hModule.close()
@@ -110,7 +110,7 @@ for name, path in pairs(packageList.modulesList) do
         end
         do return end
     end
-    local moduleContent = http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/modules" .. name)
+    local moduleContent = http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/modules/" .. name)
     hModule.write(moduleContent.readAll())
     print("*   [OK] Module " .. name .. " installed.")
     hModule.close()
