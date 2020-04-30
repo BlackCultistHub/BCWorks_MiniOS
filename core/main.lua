@@ -12,8 +12,8 @@ for _,file in pairs(fs.list(packageList.modulesDirObj)) do
 end
 write("$ ")
 local inpModule = io.read()
-local hModule = fs.open(packageList.modulesDir..inpModule..".lua", "r")
-print(packageList.modulesDir..inpModule..".lua")
+local hModule = fs.open(packageList.modulesDir .. inpModule .. ".lua", "r")
+print(packageList.modulesDir .. inpModule .. ".lua")
 loadstring(hModule.readAll())()
 menu = true
 
