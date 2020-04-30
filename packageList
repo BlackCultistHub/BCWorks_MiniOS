@@ -1,3 +1,7 @@
 modulesList = {
     ['main.lua'] = '/BCWorks_MiniOS/main.lua'
 }
+
+function getModulesList()
+    return modulesList
+end
