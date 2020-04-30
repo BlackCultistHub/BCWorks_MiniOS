@@ -1,6 +1,6 @@
 --Package list api
 
-modulesList = {['main.lua'] = '/BCWorks_MiniOS/main.lua'}
+modulesList = {['main.lua'] = '/BCWorks_MiniOS/'}
 
 function test()
     print("Test message")
