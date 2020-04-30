@@ -1,0 +1,16 @@
+--Package list api
+rootDir = "/BCWorks_MiniOS/"
+coreDir = rootDir.."core/"
+modulesDir = rootDir.."modules/"
+
+modulesCoreList = {
+    ['main.lua'] = coreDir
+}
+
+modulesList = {
+    ['crypto_chat.lua'] = modulesDir
+}
+
+function test()
+    print("Test message")
+end

@@ -1,7 +1,0 @@
---Package list api
-
-modulesList = {['main.lua'] = '/BCWorks_MiniOS/'}
-
-function test()
-    print("Test message")
-end
