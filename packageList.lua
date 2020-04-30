@@ -1,7 +1,3 @@
-local packageList = {}
-
-local packageList.modules = {
+local modules = {
     ['main.lua'] = '/BCWorks_MiniOS/main.lua'
 }
-
-return packageList
