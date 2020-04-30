@@ -1,7 +1,3 @@
-modulesList = {
-    ['main.lua'] = '/BCWorks_MiniOS/main.lua'
-}
+--Package list api
 
-function getModulesList()
-    return modulesList
-end
+modulesList = {['main.lua'] = '/BCWorks_MiniOS/main.lua'}
