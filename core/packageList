@@ -1,7 +1,10 @@
 --Package list api
 rootDir = "/BCWorks_MiniOS/"
+rootDirObj = "/BCWorks_MiniOS"
 coreDir = rootDir.."core/"
+coreDirObj = rootDir.."core"
 modulesDir = rootDir.."modules/"
+modulesDirObj = rootDir.."modules"
 
 modulesCoreList = {
     ['main.lua'] = coreDir

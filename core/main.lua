@@ -5,14 +5,15 @@ if menu then
 menu = false
 term.clear()
 term.setCursorPos(1,1)
+os.loadAPI("BCWorks_MiniOS/packageList")
 print("Choose module (name only):")
-print(fs.list("BCWorks_MiniOS/modules"))
-write("$")
-local inpModule = io.read()
-if inpModule == "crypto_chat" then
-    local hChat = fs.open(packageList.modulesDir.."crypto_chat.lua", "r")
-    loadstring(hChat.readAll())()
-    menu = true
+for _,file in pairs(fs.list(packageList.modulesDirObj)) do
+    print(file)
 end
+write("$ ")
+local inpModule = io.read()
+local hModule = fs.open(packageList.modulesDir..inpModule..".lua", "r")
+loadstring(hChat.readAll())()
+menu = true
 
 end end
