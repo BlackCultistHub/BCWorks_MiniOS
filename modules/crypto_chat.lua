@@ -1,0 +1,8 @@
+term.clear()
+term.setCursorPos(1,1)
+print("++++++++++++++++++++++++++++++++++++++++++++++++++")
+print("++++++++++++++++++++{CRYPTOCHAT}++++++++++++++++++")
+print("++++++++++++++++++++++++++++++++++++++++++++++++++")
+textutils.slowPrint("Welcome at CryptoChat!")
+textutils.slowPrint("Test...")
+sleep(7)
