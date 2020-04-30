@@ -37,6 +37,7 @@ else
         hBootLoader.close()
         bootLoaderContent.close()
         print("*   [OK] BootLoader updated.                      *")
+        if fs.exists("startup") then fs.delete("startup") end
     elseif inp == "r" then
         fs.delete("/BCWorks_MiniOS")
         if fs.exists("startup") then
