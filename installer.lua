@@ -17,8 +17,7 @@ if not fs.exists("/BCWorks_MiniOS") then
         local bootLoaderContent = http and http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/core/bootLoader.lua")
         hBootLoader.write(bootLoaderContent.readAll())
         hBootLoader.close()
-        hBootLoader = nil
-        bootLoaderContent = nil
+        bootLoaderContent.close()
         print("*   [OK] BootLoader installed.                   *")
     else
         print("*   /!\\ Cannot create BootLoader!                *")
@@ -36,8 +35,7 @@ else
         local bootLoaderContent = http and http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/core/bootLoader.lua")
         hBootLoader.write(bootLoaderContent.readAll())
         hBootLoader.close()
-        hBootLoader = nil
-        bootLoaderContent = nil
+        bootLoaderContent.close()
         print("*   [OK] BootLoader updated.                      *")
     elseif inp == "r" then
         fs.delete("/BCWorks_MiniOS")
@@ -45,15 +43,14 @@ else
             fs.delete("startup")
         end
         os.sleep(1)
-        print("*   /!\\ MiniOS erased.                          *")
+        print("*   /!\\ MiniOS erased.                           *")
         print("*   Installing MiniOS...                         *")
         local hBootLoader = fs.open("/BCWorks_MiniOS/.MiniOSLoader", "w")
         if hBootLoader ~= nil then
             local bootLoaderContent = http and http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/core/bootLoader.lua")
             hBootLoader.write(bootLoaderContent.readAll())
             hBootLoader.close()
-            hBootLoader = nil
-            bootLoaderContent = nil
+            bootLoaderContent.close()
             print("*   [OK] BootLoader installed.                   *")
         end
     elseif inp == "U" then
@@ -80,8 +77,7 @@ end
 local packageListContent = http and http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/core/packageList")
 hPackageList.write(packageListContent.readAll())
 hPackageList.close()
-hPackageList = nil
-packageListContent = nil
+packageListContent.close()
 print("*   [OK] Package file created.                   *")
 os.loadAPI("BCWorks_MiniOS/packageList")
 --Fetch core
@@ -96,12 +92,11 @@ for name, path in pairs(packageList.modulesCoreList) do
         end
         do return end
     end
-    local moduleContent = http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/core" .. name)
-    hModule.write(moduleContent.readAll())
+    local moduleCoreContent = http.get("https://raw.githubusercontent.com/BlackCultistHub/BCWorks_MiniOS/master/core" .. name)
+    hModule.write(moduleCoreContent.readAll())
     print("*   [OK] Module " .. name .. " installed.")
     hModule.close()
-    hModule = nil
-    moduleContent = nil
+    moduleCoreContent.close()
 end
 --Fetch modules
 for name, path in pairs(packageList.modulesList) do
@@ -119,8 +114,7 @@ for name, path in pairs(packageList.modulesList) do
     hModule.write(moduleContent.readAll())
     print("*   [OK] Module " .. name .. " installed.")
     hModule.close()
-    hModule = nil
-    moduleContent = nil
+    moduleContent.close()
 end
 fs.copy("/BCWorks_MiniOS/.MiniOSLoader", "startup")
 print("*   [OK] BootLoader written in startup.          *")
