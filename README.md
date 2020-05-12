@@ -1,4 +1,7 @@
 # BCWorks_MiniOS
+
+Work In Progress.
+
 MiniOS utility for ComputerCraft 1.8 for comfortable client management and chatting.
 
 #Install
